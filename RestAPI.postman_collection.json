@@ -1,0 +1,626 @@
+{
+	"info": {
+		"_postman_id": "61e70aa8-401e-4bae-818f-65575568ae0a",
+		"name": "RestAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "30413446"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"new_password\"\n}\n"
+				},
+				"url": {
+					"raw": "{{base_url}}/register",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"register"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Register",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"first_name\": \"John\",\n    \"last_name\": \"Doe\",\n    \"email\": \"john.doe@example.com\",\n    \"password\": \"new_password\"\n}\n"
+						},
+						"url": {
+							"raw": "{{base_url}}/register",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"register"
+							]
+						}
+					},
+					"status": "CREATED",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.0 Python/3.11.5"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Oct 2023 02:49:42 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "89"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"User registered successfully\",\n    \"user_id\": \"6528b0456afeaefe36cd5896\"\n}"
+				}
+			]
+		},
+		{
+			"name": "login",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true,
+					"accept": true
+				}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\" : \"john.doe@example.com\",\n    \"password\" : \"new_password\"\n}  "
+				},
+				"url": {
+					"raw": "{{base_url}}/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"login"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\" : \"john.doe@example.com\",\n    \"password\" : \"new_password\"\n}  "
+						},
+						"url": {
+							"raw": "{{base_url}}/login",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.0 Python/3.11.5"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Oct 2023 02:57:17 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "320"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"access_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY5NzE2NTgzNywianRpIjoiNWZhY2U3OGQtYTU5ZC00OGIxLWI0NGYtNTk0ODJlN2ZjZmI1IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjY1MjhiMDQ1NmFmZWFlZmUzNmNkNTg5NSIsIm5iZiI6MTY5NzE2NTgzNywiZXhwIjoxNjk3MTY2NzM3fQ.xiNQH5XSX0OoGA9u47jOzUPBXk6Jp1Gsp87WXobuF2U\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Create template",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true,
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"template_name\": \"Dummy Template\",\n    \"subject\": \"Dummy Subject\",\n    \"body\": \"This is the dummy content for the template body. You can replace this with your actual template content.\"\n}\n"
+				},
+				"url": {
+					"raw": "{{base_url}}/template",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"template"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create template",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"template_name\": \"Dummy Template\",\n    \"subject\": \"Dummy Subject\",\n    \"body\": \"This is the dummy content for the template body. You can replace this with your actual template content.\"\n}\n"
+						},
+						"url": {
+							"raw": "{{base_url}}/template",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"template"
+							]
+						}
+					},
+					"status": "CREATED",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.0 Python/3.11.5"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Oct 2023 03:01:57 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "94"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Template created successfully\",\n    \"template_id\": \"6528b3256afeaefe36cd5897\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Get all template",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"content-type": true,
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}/template",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"template"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Create template example",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/template",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"template"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.0 Python/3.11.5"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Oct 2023 03:05:20 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "274"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"templates\": [\n        {\n            \"_id\": \"6528b3256afeaefe36cd5897\",\n            \"body\": \"This is the dummy content for the template body. You can replace this with your actual template content.\",\n            \"subject\": \"Dummy Subject\",\n            \"template_name\": \"Dummy Template\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "Get template",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true,
+				"disabledSystemHeaders": {
+					"content-type": true,
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}/template/6528b3256afeaefe36cd5897",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"template",
+						"6528b3256afeaefe36cd5897"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Get template",
+					"originalRequest": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "{{base_url}}/template/6528b3256afeaefe36cd5897",
+							"host": [
+								"{{base_url}}"
+							],
+							"path": [
+								"template",
+								"6528b3256afeaefe36cd5897"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Server",
+							"value": "Werkzeug/3.0.0 Python/3.11.5"
+						},
+						{
+							"key": "Date",
+							"value": "Fri, 13 Oct 2023 03:16:39 GMT"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Content-Length",
+							"value": "253"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"template\": {\n        \"_id\": \"6528b3256afeaefe36cd5897\",\n        \"body\": \"This is the dummy content for the template body. You can replace this with your actual template content.\",\n        \"subject\": \"Dummy Subject\",\n        \"template_name\": \"Dummy Template\"\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Update template",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true,
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"template_name\": \"Dummy Template update\",\n    \"subject\": \"Dummy Subject\",\n    \"body\": \"This is the dummy content for the template body. You can replace this with your actual template content.\"\n}"
+				},
+				"url": {
+					"raw": "{{base_url}}/template/6528b3256afeaefe36cd5897",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"template",
+						"6528b3256afeaefe36cd5897"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete template",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {
+					"content-type": true,
+					"accept": true
+				}
+			},
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "{{base_url}}/template/6528b3256afeaefe36cd5897",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"template",
+						"6528b3256afeaefe36cd5897"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
